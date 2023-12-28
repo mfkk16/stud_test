@@ -13,6 +13,7 @@ dependencies:
   flutter_bloc:
   dio:
   get_it:
+  fluttertoast:
 
 dev_dependencies:
   flutter_test:
