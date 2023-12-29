@@ -1,2 +1,2 @@
-const String landingPage = "/landing";
+const String landingPage = "/";
 

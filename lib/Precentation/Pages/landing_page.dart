@@ -22,10 +22,10 @@ class LandingPage extends StatelessWidget {
           Expanded(
             child: TabBarView(
               children: [
-                Students(),
-                Subjects(),
-                Classrooms(),
-                Registration(),
+                StudentsPage(),
+                SubjectsPage(),
+                ClassroomsPage(),
+                RegistrationPage(),
               ],
             ),
           ),
