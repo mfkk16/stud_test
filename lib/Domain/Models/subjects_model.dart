@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final subjectsModel = subjectsModelFromJson(jsonString);
-
 import 'dart:convert';
 
 SubjectsModel subjectsModelFromJson(String str) => SubjectsModel.fromJson(json.decode(str));
@@ -16,12 +12,12 @@ class SubjectsModel {
   });
 
   factory SubjectsModel.fromJson(Map<String, dynamic> json) => SubjectsModel(
-    subjects: List<Subject>.from(json["subjects"].map((x) => Subject.fromJson(x))),
-  );
+        subjects: List<Subject>.from(json["subjects"].map((x) => Subject.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    "subjects": List<dynamic>.from(subjects.map((x) => x.toJson())),
-  };
+        "subjects": List<dynamic>.from(subjects.map((x) => x.toJson())),
+      };
 }
 
 class Subject {
@@ -38,16 +34,16 @@ class Subject {
   });
 
   factory Subject.fromJson(Map<String, dynamic> json) => Subject(
-    credits: json["credits"],
-    id: json["id"],
-    name: json["name"],
-    teacher: json["teacher"],
-  );
+        credits: json["credits"],
+        id: json["id"],
+        name: json["name"],
+        teacher: json["teacher"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "credits": credits,
-    "id": id,
-    "name": name,
-    "teacher": teacher,
-  };
+        "credits": credits,
+        "id": id,
+        "name": name,
+        "teacher": teacher,
+      };
 }

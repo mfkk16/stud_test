@@ -7,4 +7,5 @@ class AppConst {
   static const String allStudents = "/students/?api_key=$_apiKey";
   static const String allSubjects = "/subjects/?api_key=$_apiKey";
   static const String allClassrooms = "/classrooms/?api_key=$_apiKey";
+  static const String allRegistrations = "/registration/?api_key=$_apiKey";
 }

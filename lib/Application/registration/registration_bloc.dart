@@ -1,24 +1,29 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:stud_test/Domain/Core/resource/data_state.dart';
+import 'package:stud_test/Domain/Models/registration_model.dart';
+import 'package:stud_test/Domain/Usecase/get_registration_usecase.dart';
+import 'package:stud_test/Precentation/Widgets/toast_util.dart';
 
 part 'registration_event.dart';
+
 part 'registration_state.dart';
 
 class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
   final GetRegistrationUsecase _getRegistrationUsecase;
+  List<Registration> _list = [];
 
-  RegistrationBloc(this._getRegistrationUsecase) : super(SubjectsInitial()) {
-    on<FetchSubjects>(fetchSubjects);
+  RegistrationBloc(this._getRegistrationUsecase) : super(RegistrationInitial()) {
+    on<FetchRegistration>(fetchSubjects);
   }
 
-  FutureOr<void> fetchSubjects(FetchSubjects event, Emitter<SubjectsState> emit) async {
-    emit(LoadingSubjectsState());
-    var data = await _getSubjectsUsecase();
+  FutureOr<void> fetchSubjects(FetchRegistration event, Emitter<RegistrationState> emit) async {
+    emit(LoadingRegistrationState());
+    var data = await _getRegistrationUsecase();
     if (data is DataSuccess) {
-      ToastUtil.showToast("Successfully fetched the subjects");
-      emit(LoadedSubjectsState(list: data.data!.subjects));
+      emit(LoadedRegistrationState(list: data.data!.registrations));
     } else {
       ToastUtil.showToast(data.dataError!.errorMessage);
     }
