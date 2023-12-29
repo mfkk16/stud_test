@@ -30,5 +30,5 @@ Future<void> initializeDependencies() async {
   sl.registerLazySingleton<StudentsBloc>(() => StudentsBloc(sl()));
   sl.registerLazySingleton<SubjectsBloc>(() => SubjectsBloc(sl()));
   sl.registerLazySingleton<ClassroomsBloc>(() => ClassroomsBloc(sl()));
-  sl.registerLazySingleton<RegistrationBloc>(() => RegistrationBloc(sl(), sl(), sl(),sl()));
+  sl.registerLazySingleton<RegistrationBloc>(() => RegistrationBloc(sl(), sl(), sl(), sl()));
 }

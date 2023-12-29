@@ -15,7 +15,7 @@ class LandingPage extends StatelessWidget {
   }
 
   _body(BuildContext context) {
-    return  DefaultTabController(
+    return DefaultTabController(
       length: 4,
       child: Column(
         children: [

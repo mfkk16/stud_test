@@ -11,11 +11,17 @@ import 'package:stud_test/Domain/Usecase/subject_classroom_usecase.dart';
 
 abstract class NetworkRepo {
   Future<DataState<StudentsModel>> getAllStudents();
+
   Future<DataState<SubjectsModel>> getSubjects();
+
   Future<DataState<ClassroomsModel>> getClassrooms();
+
   Future<DataState<RegistrationModel>> getRegistration();
+
   //
   Future<DataState<SubjectToClassroomModel>> setSubjectToClassrooms(ParamsSubClass params);
+
   Future<DataState<AssignStudentToClassroomModel>> setStudentToClassroom(ParamsStuClass params);
+
   Future<DataState<DeleteRegistrationModel>> deleteRegistration(int params);
 }

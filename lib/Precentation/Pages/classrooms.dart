@@ -64,13 +64,13 @@ class ClassroomsPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(classroom.name),
-
                 const SizedBox(height: 15),
                 Row(
                   children: [
                     SubtitleWidget(title: "ID", body: classroom.id.toString()),
                     const Spacer(),
-                    SubtitleWidget(title: "Layout", body: classroom.layout),     const Spacer(),
+                    SubtitleWidget(title: "Layout", body: classroom.layout),
+                    const Spacer(),
                     SubtitleWidget(title: "Size", body: classroom.size.toString()),
                   ],
                 ),

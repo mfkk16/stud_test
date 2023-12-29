@@ -5,8 +5,6 @@ abstract class ClassroomsState {}
 
 class ClassroomsInitial extends ClassroomsState {}
 
-
-
 class LoadedStudentState extends ClassroomsState {
   final List<Classroom> list;
 

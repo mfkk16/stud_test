@@ -1,5 +1,3 @@
-
-
 import 'dart:convert';
 
 RegistrationModel registrationModelFromJson(String str) => RegistrationModel.fromJson(json.decode(str));
@@ -14,12 +12,12 @@ class RegistrationModel {
   });
 
   factory RegistrationModel.fromJson(Map<String, dynamic> json) => RegistrationModel(
-    registrations: List<Registration>.from(json["registrations"].map((x) => Registration.fromJson(x))),
-  );
+        registrations: List<Registration>.from(json["registrations"].map((x) => Registration.fromJson(x))),
+      );
 
   Map<String, dynamic> toJson() => {
-    "registrations": List<dynamic>.from(registrations.map((x) => x.toJson())),
-  };
+        "registrations": List<dynamic>.from(registrations.map((x) => x.toJson())),
+      };
 }
 
 class Registration {
@@ -34,14 +32,14 @@ class Registration {
   });
 
   factory Registration.fromJson(Map<String, dynamic> json) => Registration(
-    id: json["id"],
-    student: json["student"],
-    subject: json["subject"],
-  );
+        id: json["id"],
+        student: json["student"],
+        subject: json["subject"],
+      );
 
   Map<String, dynamic> toJson() => {
-    "id": id,
-    "student": student,
-    "subject": subject,
-  };
+        "id": id,
+        "student": student,
+        "subject": subject,
+      };
 }

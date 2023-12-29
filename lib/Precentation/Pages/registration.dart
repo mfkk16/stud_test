@@ -111,7 +111,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
               child: ElevatedButton(
                 onPressed: () {
                   BlocProvider.of<RegistrationBloc>(context).add(FetchAllRegistrations());
-
                 },
                 child: Text("Delete"),
               ),

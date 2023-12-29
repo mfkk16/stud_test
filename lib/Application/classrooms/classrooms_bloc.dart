@@ -8,7 +8,6 @@ import 'package:stud_test/Domain/Usecase/get_classrooms_usecase.dart';
 import 'package:stud_test/Precentation/Widgets/toast_util.dart';
 
 part 'classrooms_event.dart';
-
 part 'classrooms_state.dart';
 
 class ClassroomsBloc extends Bloc<ClassroomsEvent, ClassroomsState> {

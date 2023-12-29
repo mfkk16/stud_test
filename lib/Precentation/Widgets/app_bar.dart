@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AppbarCustom extends StatelessWidget  implements PreferredSizeWidget {
+class AppbarCustom extends StatelessWidget implements PreferredSizeWidget {
   const AppbarCustom({super.key, required this.title});
 
   final String title;
@@ -14,5 +14,4 @@ class AppbarCustom extends StatelessWidget  implements PreferredSizeWidget {
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
-
 }

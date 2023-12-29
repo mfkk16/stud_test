@@ -8,7 +8,6 @@ import 'package:stud_test/Domain/Usecase/get_subjects_usecase.dart';
 import 'package:stud_test/Precentation/Widgets/toast_util.dart';
 
 part 'subjects_event.dart';
-
 part 'subjects_state.dart';
 
 class SubjectsBloc extends Bloc<SubjectsEvent, SubjectsState> {

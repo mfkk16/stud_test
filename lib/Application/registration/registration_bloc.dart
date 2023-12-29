@@ -18,7 +18,6 @@ import 'package:stud_test/Precentation/Widgets/toast_util.dart';
 import 'package:stud_test/dependencies_injection.dart';
 
 part 'registration_event.dart';
-
 part 'registration_state.dart';
 
 class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
@@ -87,7 +86,7 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
     }
   }
 
-  FutureOr<void> fetchAllRegistrations(FetchAllRegistrations event, Emitter<RegistrationState> emit)async {
+  FutureOr<void> fetchAllRegistrations(FetchAllRegistrations event, Emitter<RegistrationState> emit) async {
     emit(LoadingRegistrationState());
     var data = await _getRegistrationUsecase();
     if (data is DataSuccess) {
@@ -97,7 +96,7 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
     }
   }
 
-  FutureOr<void> deleteRegistration(DeleteRegistration event, Emitter<RegistrationState> emit)async {
+  FutureOr<void> deleteRegistration(DeleteRegistration event, Emitter<RegistrationState> emit) async {
     var data = await _deleteStudentToClassroom(params: event.regId);
     if (data is DataSuccess) {
       ToastUtil.showToast("Successfully Deleted");
