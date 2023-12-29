@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stud_test/Application/students/students_bloc.dart';
 import 'package:stud_test/Domain/Models/students_model.dart';
 import 'package:stud_test/Precentation/Widgets/app_bar.dart';
+import 'package:stud_test/Precentation/Widgets/subtitle_widget.dart';
 
 class StudentsPage extends StatelessWidget {
   const StudentsPage({super.key});
@@ -62,8 +63,17 @@ class StudentsPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text("${student.name}(${student.age})"),
-                Text("E-Mail : ${student.email}"),
-                Text("ID : ${student.id}"),
+                SizedBox(height: 15),
+                Row(
+                  children: [
+
+                    SubtitleWidget(title: "ID", body: student.id.toString()),
+
+                    Spacer(),
+
+                    SubtitleWidget(title: "E-Mail", body: student.email),
+                  ],
+                ),
               ],
             ),
           ),
