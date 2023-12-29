@@ -18,14 +18,26 @@ class StudentsBloc extends Bloc<StudentsEvent, StudentsState> {
     on<FetchAllStudents>(fetchStudents);
   }
 
+  List<Student> _list = [];
+
   FutureOr<void> fetchStudents(FetchAllStudents event, Emitter<StudentsState> emit) async {
     emit(LoadingStudentState());
     var data = await _getAllStudentsUsecase();
     if (data is DataSuccess) {
       ToastUtil.showToast("Successfully fetched the students");
+      _list.addAll(data.data!.students);
       emit(LoadedStudentState(list: data.data!.students));
     } else {
       ToastUtil.showToast(data.dataError!.errorMessage);
+    }
+  }
+
+  Future<List<Student>> get getStudents async {
+    if (_list.isEmpty) {
+      var data = await _getAllStudentsUsecase();
+      return data.data!.students;
+    } else {
+      return _list;
     }
   }
 }

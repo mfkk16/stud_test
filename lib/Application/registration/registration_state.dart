@@ -4,10 +4,7 @@ part of 'registration_bloc.dart';
 abstract class RegistrationState {}
 
 class RegistrationInitial extends RegistrationState {}
-class LoadedRegistrationState extends RegistrationState {
-  final List<Registration> list;
 
-  LoadedRegistrationState({required this.list});
-}
+class LoadedRegistrationState extends RegistrationState {}
 
 class LoadingRegistrationState extends RegistrationState {}

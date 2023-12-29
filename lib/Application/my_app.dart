@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         BlocProvider<StudentsBloc>(create: (context) => sl()..add(FetchAllStudents())),
         BlocProvider<SubjectsBloc>(create: (context) => sl()..add(FetchSubjects())),
         BlocProvider<ClassroomsBloc>(create: (context) => sl()..add(FetchClassrooms())),
-        BlocProvider<RegistrationBloc>(create: (context) => sl()..add(FetchRegistration())),
+        BlocProvider<RegistrationBloc>(create: (context) => sl()..add(FetchData())),
       ],
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
