@@ -63,14 +63,11 @@ class StudentsPage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text("${student.name}(${student.age})"),
-                SizedBox(height: 15),
+                const SizedBox(height: 15),
                 Row(
                   children: [
-
                     SubtitleWidget(title: "ID", body: student.id.toString()),
-
-                    Spacer(),
-
+                    const Spacer(),
                     SubtitleWidget(title: "E-Mail", body: student.email),
                   ],
                 ),
