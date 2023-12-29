@@ -7,6 +7,9 @@ import 'package:stud_test/Domain/Usecase/get_classrooms_usecase.dart';
 import 'package:stud_test/Domain/Usecase/get_registration_usecase.dart';
 import 'package:stud_test/Domain/Usecase/get_students_usecase.dart';
 import 'package:stud_test/Domain/Usecase/get_subjects_usecase.dart';
+import 'package:stud_test/Domain/Usecase/removeStudentFromCls_usecase.dart';
+import 'package:stud_test/Domain/Usecase/student_classroom_usecase.dart';
+import 'package:stud_test/Domain/Usecase/subject_classroom_usecase.dart';
 import 'package:stud_test/Infrastructure/network_repo.dart';
 import 'package:stud_test/Infrastructure/network_repo_impli.dart';
 
@@ -19,9 +22,13 @@ Future<void> initializeDependencies() async {
   sl.registerSingleton<GetSubjectsUsecase>(GetSubjectsUsecase(sl()));
   sl.registerSingleton<GetClassroomsUsecase>(GetClassroomsUsecase(sl()));
   sl.registerSingleton<GetRegistrationUsecase>(GetRegistrationUsecase(sl()));
-
+  //
+  sl.registerSingleton<SetSubjectToClassroom>(SetSubjectToClassroom(sl()));
+  sl.registerSingleton<SetStudentToClassroom>(SetStudentToClassroom(sl()));
+  sl.registerSingleton<DeleteStudentToClassroom>(DeleteStudentToClassroom(sl()));
+  //
   sl.registerLazySingleton<StudentsBloc>(() => StudentsBloc(sl()));
   sl.registerLazySingleton<SubjectsBloc>(() => SubjectsBloc(sl()));
   sl.registerLazySingleton<ClassroomsBloc>(() => ClassroomsBloc(sl()));
-  sl.registerLazySingleton<RegistrationBloc>(() => RegistrationBloc());
+  sl.registerLazySingleton<RegistrationBloc>(() => RegistrationBloc(sl(), sl(), sl(),sl()));
 }
